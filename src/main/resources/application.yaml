@@ -1,0 +1,21 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: validate
+
+  liquibase:
+    enabled: true
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:local}
+
+jwt:
+  private-key: ${JWT_PRIVATE_KEY_PATH}
+  public-key: ${JWT_PUBLIC_KEY_PATH}
+  ttl: 15m
+  refresh-ttl: 15d
+
+services:
+  user-service:
+    url: ${USER_SERVICE_URL}

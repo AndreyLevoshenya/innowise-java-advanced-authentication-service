@@ -1,7 +1,7 @@
 package com.inno.service;
 
-import com.inno.controller.client.UserServiceClient;
-import com.inno.controller.exception.UserServiceException;
+import com.inno.service.client.UserServiceClient;
+import com.inno.service.exception.UserServiceException;
 import com.inno.repository.CredentialRepository;
 import com.inno.repository.model.Credential;
 import com.inno.repository.model.Role;

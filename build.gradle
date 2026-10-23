@@ -1,0 +1,42 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version libs.versions.springboot
+    id 'io.spring.dependency-management' version '1.1.7'
+    id 'org.sonarqube' version '6.2.0.5505'
+    id 'jacoco'
+}
+
+group = 'com.inno'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    gradlePluginPortal()
+}
+
+dependencies {
+    implementation libs.springboot.starter
+    implementation libs.springboot.starter.jpa
+    implementation libs.springboot.starter.liquibase
+    implementation libs.springboot.starter.validation
+    implementation libs.springboot.starter.web
+    implementation libs.springboot.starter.security
+    implementation libs.jjwt.api
+    implementation libs.mapstruct
+
+    runtimeOnly libs.postgresql
+    runtimeOnly libs.jjwt.impl
+    runtimeOnly libs.jjwt.jackson
+
+    annotationProcessor libs.mapstruct.annotation.processor
+
+    testImplementation libs.springboot.starter.test
+}
+
+tasks.named('bootJar') {
+    archiveFileName = 'auth-service.jar'
+}
+
+test {
+    useJUnitPlatform()
+}

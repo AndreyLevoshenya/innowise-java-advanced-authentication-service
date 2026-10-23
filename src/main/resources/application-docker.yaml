@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+
+jwt:
+  private-key: ${JWT_PRIVATE_KEY_PATH}
+  public-key: ${JWT_PUBLIC_KEY_PATH}
+  ttl: 15m
+  refresh-ttl: 15d
+
+services:
+  user-service:
+    url: ${USER_SERVICE_URL}

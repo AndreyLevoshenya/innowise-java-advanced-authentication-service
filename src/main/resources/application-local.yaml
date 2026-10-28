@@ -11,6 +11,5 @@ jwt:
   ttl: 15m
   refresh-ttl: 15d
 
-services:
-  user-service:
-    url: ${USER_SERVICE_URL}
+user-service:
+  url: ${USER_SERVICE_URL}
